@@ -24,6 +24,7 @@ $eventIDArray = $eventIDs -split ',' | ForEach-Object { $_.Trim() }
 # Grabbing the events in a for loop and goes into if statement
 foreach ($eventID in $eventIDArray) {
     try {
+        # grabbing the events
         $events = Get-WinEvent -FilterHashtable @{
             LogName = $eventType
             Id = $eventID
